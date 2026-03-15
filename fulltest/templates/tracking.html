@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+
+{% block title %}
+    Tracking Parcels Page
+{% endblock %}
+
+{% block content %}
+    <h2>Track Parcel</h2>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="tracking_number" id="tracking_number" placeholder="Numéro de suivi  (Ex: TRK123456789)" required/>
+        <button type="submit">Suivre le colis</button>
+    </form>
+    {% if parcel %}
+        <h3>Détails du colis :</h3>
+        <p><strong>Numéro de suivi :</strong> {{ parcel.tracking_number }}</p>
+        <p><strong>Adresse de départ :</strong> {{ parcel.departure_address }}</p>
+        <p><strong>Adresse d'arrivée :</strong> {{ parcel.arrival_address }}</p>
+        <p><strong>Poids :</strong> {{ parcel.weight }} kg</p>
+        <p><strong>Status :</strong> {{ parcel.status }}</p>
+    {% elif error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <a href="/">Accueil</a>
+{% endblock %}

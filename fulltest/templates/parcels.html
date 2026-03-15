@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+
+{% block title %}
+    Parcels Page
+{% endblock %}
+
+{% block content %}
+    <h1>Parcels Page</h1>
+    <ul>
+        {% for c in nb_colis %}
+            <li>{{ c }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Accueil</a>
+{% endblock %}

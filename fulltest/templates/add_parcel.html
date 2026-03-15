@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+
+{% block title %}
+    Add Parcels Page
+{% endblock %}
+
+{% block content %}
+    <h2>Add Parcels</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Ajouter le colis</button>
+    </form>
+    <a href="/">Accueil</a>
+{% endblock %}

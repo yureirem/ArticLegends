@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+    <h1>Bienvenue sur le site de test de Django !</h1>
+    {% if nb_colis > 0 %}
+        <p>Vous avez {{ nb_colis }} colis à livrer.</p>
+        <a href="/parcels">Voir les colis</a>
+    {% else %}
+        <p>Vous n'avez aucun colis à livrer.</p>
+    {% endif %}
+    <a href="/add_parcel">Ajouter un nouveau colis</a>
+    <a href="/tracking">Suivre un colis</a>
+{% endblock %}
