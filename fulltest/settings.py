@@ -118,7 +118,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = '/python/static/'
-STATIC_ROOT = BASE_DIR / 'public/static'
+STATIC_ROOT = BASE_DIR / '/public/static'
 
 # optionnal settings for production (recommended if you deploy on https)
 # CSRF_TRUSTED_ORIGINS = ['http://IP_SERVEUR', 'http://nom_de_domaine.com']
